@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stress & Study Life – Reading Cloze Practice</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#eef3f8;color:#172033;font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+.wrap{max-width:1100px;margin:auto;padding:15px}
+.card{background:#fff;border-radius:18px;padding:20px;margin:16px 0;box-shadow:0 4px 18px #0001}
+h1,h2{color:#1254d8}
+h1{margin-top:0;font-size:27px}
+h2{font-size:22px;border-bottom:2px solid #dce6ff;padding-bottom:8px}
+.instructions{background:#fff9cf;border-left:5px solid #dfc400;padding:12px;border-radius:9px}
+.passage{background:#f8fafc;border:1px solid #dce3ed;border-radius:11px;padding:16px;font-size:16px}
+.question{border:1px solid #d8dfeb;border-radius:12px;padding:13px;margin:13px 0;background:#fcfdff}
+.qtext{margin-bottom:9px}
+.options{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.option{border:1px solid #cdd6e4;border-radius:9px;padding:9px;background:white;cursor:pointer}
+.option:hover{background:#f0f5ff}
+.option input{margin-right:7px}
+.correct{background:#dcf6e6!important;border-color:#42a66a!important}
+.wrong{background:#ffe1e1!important;border-color:#db6b6b!important}
+.explanation{display:none;margin-top:11px;padding:12px;background:#f4f6fa;border-left:4px solid #6576a2;border-radius:7px}
+.explanation.show{display:block}
+.explanation h4{margin:0 0 5px;color:#174da8}
+.meaning{color:#35435e}
+.score{font-size:19px;font-weight:700;margin:12px 0}
+button{border:0;border-radius:9px;padding:11px 17px;font-weight:700;cursor:pointer}
+.submit{background:#1254d8;color:#fff}
+.reset{background:#e8edf4;color:#26324a;margin-left:7px}
+.answer{font-weight:700;color:#168447}
+@media(max-width:760px){.options{grid-template-columns:1fr 1fr}}
+@media(max-width:450px){.options{grid-template-columns:1fr}.card{padding:13px}.passage{font-size:15px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="card">
+<h1>Reading Cloze Practice – Stress & Study Life</h1>
+<div class="instructions">
+<b>Choose the correct answer (A, B, C, or D).</b><br>
+Each passage is scored separately. The correct answer and the Vietnamese explanation appear <b>only after you click Submit</b>.
+</div>
+</div>
+
+<div class="card">
+<h2>① Healthy Ways to Manage Stress</h2>
+<div class="passage">
+It’s important to acknowledge that stress is a normal part of life, (1) ______ it’s vital to learn healthy ways to manage it. Talking to trusted (2) ______, like a parent, teacher, or counselor, can be a great way to receive support and guidance.<br><br>
+Finding healthy outlets for stress is (3) ______. Regular exercise, spending time in nature, listening to calming music, or pursuing creative hobbies can all be (4) ______ coping mechanisms.<br><br>
+Learning healthy sleep hygiene and maintaining a (5) ______ diet can also significantly impact stress levels. Finally, remember to be kind to yourself. Don’t be afraid to ask for help and prioritize your well-being.
+</div>
+<div id="p1"></div>
+<div id="r1" class="score"></div>
+<button class="submit" onclick="submitPart(1)">Submit Part 1</button>
+<button class="reset" onclick="resetPart(1)">Reset</button>
+</div>
+
+<div class="card">
+<h2>② Managing School and Life</h2>
+<div class="passage">
+It's not easy to manage school and life, but with some good time (1) ______ techniques, it's possible to achieve a study-life balance. Here are some tips for secondary-school students. Firstly, (2) ______ a schedule. Plan your week in advance, allocating specific times for studying, attending classes, and doing homework. You should also include breaks and time for relaxation or hobbies. Secondly, learn to prioritise. You should identify the most important tasks and focus (3) ______ those first. If necessary, you can delay less urgent activities until you've finished your important tasks. Remember that it's okay to say no sometimes if you feel overwhelmed. Thirdly, take (4) ______ of any free time during the day. For example, you can use long bus journeys to read or review notes. It is also advisable to get small tasks done during short breaks between classes. Finally, don't be too hard on yourself if you can't do everything perfectly. It's normal to occasionally feel stressed out. In these situations, you can consider (5) ______ to a teacher or school counsellor for support.
+</div>
+<div id="p2"></div>
+<div id="r2" class="score"></div>
+<button class="submit" onclick="submitPart(2)">Submit Part 2</button>
+<button class="reset" onclick="resetPart(2)">Reset</button>
+</div>
+
+<div class="card">
+<h2>③ Stress in a Competitive World</h2>
+<div class="passage">
+Teenagers today live in a very competitive world. It is more important than ever to succeed at school if you hope to (1) ______ a chance in the job market afterwards. It’s no wonder that many young people worry (2) ______ letting down their parents, their peers and themselves. To try to please everyone, they take on too many tasks until it becomes harder and harder to balance homework assignments, parties, sports activities and friends. The result is that young people (3) ______ from stress.<br><br>
+There are different ways of dealing with stress. Everyone knows that caffeine, in the form of coffee or soft drinks, keeps you awake and alert. But caffeine is a drug which (4) ______ become addictive. In the end, like other drugs, caffeine only leads to more stress. There are better ways to deal with stress: physical exercise is a good release for stress, (5) ______ it increases certain chemicals in the brain which calm you down. You have to get enough sleep to avoid stress and to stay healthy and full of energy.
+</div>
+<div id="p3"></div>
+<div id="r3" class="score"></div>
+<button class="submit" onclick="submitPart(3)">Submit Part 3</button>
+<button class="reset" onclick="resetPart(3)">Reset</button>
+</div>
+</div>
+
+<script>
+const sets = {
+1:[
+ {q:"1. It’s important to acknowledge that stress is a normal part of life, ______ it’s vital to learn healthy ways to manage it.",
+  o:["so","but","therefore","however"],a:0,
+  why:"<b>so</b> được dùng để nối nguyên nhân với kết quả. Stress là một phần bình thường của cuộc sống, <b>vì vậy</b> điều quan trọng là học cách quản lý nó.",
+  meaning:"Nghĩa câu: Điều quan trọng là phải thừa nhận rằng căng thẳng là một phần bình thường của cuộc sống, vì vậy việc học những cách lành mạnh để quản lý nó là rất cần thiết.",
+  grammar:"Cấu trúc: <b>Clause 1, so + Clause 2</b> → mệnh đề sau là kết quả của mệnh đề trước."},
+ {q:"2. Talking to trusted ______, like a parent, teacher, or counselor, can be a great way to receive support and guidance.",
+  o:["adult","men","infant","adolescent"],a:0,
+  why:"<b>adult</b> = người lớn. Parent, teacher và counselor đều là những người lớn mà học sinh có thể tin tưởng để xin lời khuyên.",
+  meaning:"Nghĩa câu: Nói chuyện với những người lớn đáng tin cậy, chẳng hạn như cha mẹ, giáo viên hoặc cố vấn, có thể là một cách tuyệt vời để nhận được sự hỗ trợ và hướng dẫn.",
+  grammar:"Sau <b>trusted</b> cần một danh từ chỉ người. <b>trusted adults</b> là cụm danh từ phù hợp với các ví dụ được nêu sau đó."},
+ {q:"3. Finding healthy outlets for stress is ______.",
+  o:["low","dependent","light","crucial"],a:3,
+  why:"<b>crucial</b> = cực kỳ quan trọng, thiết yếu. Cụm <b>be crucial</b> rất phù hợp về nghĩa.",
+  meaning:"Nghĩa câu: Tìm những cách lành mạnh để giải tỏa căng thẳng là điều cực kỳ quan trọng.",
+  grammar:"Cấu trúc <b>Finding ... is + adjective</b>. 'Finding healthy outlets for stress' là cụm V-ing làm chủ ngữ; <b>crucial</b> là tính từ làm bổ ngữ."},
+ {q:"4. Regular exercise, spending time in nature, listening to calming music, or pursuing creative hobbies can all be ______ coping mechanisms.",
+  o:["helpful","helpless","hopeful","hopeless"],a:0,
+  why:"<b>helpful</b> = hữu ích. Những hoạt động này đều có thể là những cơ chế/cách đối phó hữu ích với căng thẳng.",
+  meaning:"Nghĩa câu: Tập thể dục thường xuyên, dành thời gian hòa mình vào thiên nhiên, nghe nhạc nhẹ nhàng hoặc theo đuổi sở thích sáng tạo đều có thể là những cách đối phó hữu ích.",
+  grammar:"Sau <b>can all be</b> cần tính từ bổ nghĩa cho <b>coping mechanisms</b>. <b>helpful</b> phù hợp cả về cấu trúc lẫn nghĩa."},
+ {q:"5. Learning healthy sleep hygiene and maintaining a ______ diet can also significantly impact stress levels.",
+  o:["fair","balanced","equalized","delicious"],a:1,
+  why:"<b>balanced diet</b> = chế độ ăn cân bằng, đầy đủ dinh dưỡng. Đây là cụm từ cố định và rất phổ biến.",
+  meaning:"Nghĩa câu: Duy trì thói quen ngủ lành mạnh và một chế độ ăn cân bằng cũng có thể ảnh hưởng đáng kể đến mức độ căng thẳng.",
+  grammar:"<b>balanced</b> là tính từ đứng trước danh từ <b>diet</b>. Cụm <b>a balanced diet</b> = một chế độ ăn cân bằng."}
+],
+2:[
+ {q:"1. It's not easy to manage school and life, but with some good time ______ techniques, it's possible to achieve a study-life balance.",
+  o:["limitation","period","management","awareness"],a:2,
+  why:"<b>time management techniques</b> là cụm từ cố định, nghĩa là các kỹ thuật quản lý thời gian.",
+  meaning:"Nghĩa câu: Không dễ để cân bằng việc học và cuộc sống, nhưng với một số kỹ thuật quản lý thời gian tốt, bạn có thể đạt được sự cân bằng giữa học tập và cuộc sống.",
+  grammar:"<b>time management</b> là cụm danh từ ghép: <b>time</b> + <b>management</b>. Cụm này bổ nghĩa cho <b>techniques</b>."},
+ {q:"2. Firstly, ______ a schedule.",
+  o:["give","make","hold","work"],a:1,
+  why:"Cụm đúng là <b>make a schedule</b> = lập thời gian biểu/kế hoạch.",
+  meaning:"Nghĩa câu: Trước hết, hãy lập một thời gian biểu.",
+  grammar:"<b>make + a schedule</b> là collocation. Không dùng <b>give/hold/work a schedule</b> trong nghĩa 'lập thời gian biểu'."},
+ {q:"3. You should identify the most important tasks and focus ______ those first.",
+  o:["to","on","with","of"],a:1,
+  why:"Cụm động từ <b>focus on</b> = tập trung vào.",
+  meaning:"Nghĩa câu: Bạn nên xác định những nhiệm vụ quan trọng nhất và tập trung vào chúng trước.",
+  grammar:"<b>focus + on + noun/pronoun</b>. Vì <b>those</b> là đại từ chỉ các nhiệm vụ nên dùng <b>focus on those</b>."},
+ {q:"4. Thirdly, take ______ of any free time during the day.",
+  o:["responsibility","action","advantage","moment"],a:2,
+  why:"Cụm cố định <b>take advantage of</b> = tận dụng.",
+  meaning:"Nghĩa câu: Thứ ba, hãy tận dụng bất kỳ khoảng thời gian rảnh nào trong ngày.",
+  grammar:"Cấu trúc cố định: <b>take advantage of + noun</b> = tận dụng cái gì."},
+ {q:"5. In these situations, you can consider ______ to a teacher or school counsellor for support.",
+  o:["talking","to talking","talked","to be talked"],a:0,
+  why:"Sau <b>consider</b> dùng <b>V-ing</b>, không dùng <b>to + V</b>. Vì vậy đáp án là <b>talking</b>.",
+  meaning:"Nghĩa câu: Trong những tình huống này, bạn có thể cân nhắc nói chuyện với giáo viên hoặc cố vấn học đường để được hỗ trợ.",
+  grammar:"Cấu trúc quan trọng: <b>consider + V-ing</b>. Ví dụ: <b>consider talking to a teacher</b>."}
+],
+3:[
+ {q:"1. It is more important than ever to succeed at school if you hope to ______ a chance in the job market afterwards.",
+  o:["wonder","have","doing","take on"],a:1,
+  why:"Cụm đúng là <b>have a chance</b> = có cơ hội.",
+  meaning:"Nghĩa câu: Thành công ở trường quan trọng hơn bao giờ hết nếu bạn hy vọng có cơ hội trên thị trường việc làm sau này.",
+  grammar:"Cấu trúc: <b>have a chance</b> = có cơ hội. Sau <b>hope to</b> phải là động từ nguyên mẫu: <b>hope to have</b>."},
+ {q:"2. It’s no wonder that many young people worry ______ letting down their parents, their peers and themselves.",
+  o:["of","at","about","with"],a:2,
+  why:"Cụm đúng là <b>worry about + noun/V-ing</b> = lo lắng về điều gì.",
+  meaning:"Nghĩa câu: Không có gì ngạc nhiên khi nhiều người trẻ lo lắng về việc làm cha mẹ, bạn bè và chính bản thân họ thất vọng.",
+  grammar:"<b>worry about + noun/V-ing</b>. Ở đây <b>letting down</b> là V-ing vì đứng sau giới từ <b>about</b>."},
+ {q:"3. The result is that young people ______ from stress.",
+  o:["suffer","please","balance","cope with"],a:0,
+  why:"Cụm đúng là <b>suffer from stress</b> = chịu đựng/bị căng thẳng.",
+  meaning:"Nghĩa câu: Kết quả là người trẻ phải chịu đựng căng thẳng.",
+  grammar:"Cấu trúc: <b>suffer from + noun</b> = chịu đựng/bị ảnh hưởng bởi một vấn đề. <b>stress</b> là danh từ."},
+ {q:"4. But caffeine is a drug which ______ become addictive.",
+  o:["can't","mustn't","have to","can"],a:3,
+  why:"<b>can</b> diễn tả khả năng: caffeine có thể gây nghiện.",
+  meaning:"Nghĩa câu: Nhưng caffeine là một chất có thể gây nghiện.",
+  grammar:"Sau <b>which</b> cần một động từ khiếm khuyết + động từ nguyên mẫu: <b>can become</b>. Không dùng <b>can to become</b>."},
+ {q:"5. There are better ways to deal with stress: physical exercise is a good release for stress, ______ it increases certain chemicals in the brain which calm you down.",
+  o:["although","unless","because","because of"],a:2,
+  why:"<b>because</b> = bởi vì, dùng để nối với một mệnh đề có chủ ngữ + động từ: <b>it increases...</b>.",
+  meaning:"Nghĩa câu: Có những cách tốt hơn để đối phó với căng thẳng: tập thể dục là một cách tốt để giải tỏa căng thẳng vì nó làm tăng một số chất trong não giúp bạn bình tĩnh.",
+  grammar:"<b>because + clause</b>. Ở đây sau because là <b>it increases certain chemicals...</b>, một mệnh đề hoàn chỉnh. <b>because of + noun/V-ing</b> mới dùng trước cụm danh từ."}
+]
+};
+
+function renderPart(n){
+ const box=document.getElementById("p"+n);
+ box.innerHTML="";
+ sets[n].forEach((x,i)=>{
+  const q=document.createElement("div");
+  q.className="question";
+  q.id="p"+n+"q"+i;
+  q.innerHTML='<div class="qtext">'+x.q+'</div>'+
+   '<div class="options">'+x.o.map((o,j)=>
+   '<label class="option"><input type="radio" name="p'+n+'q'+i+'" value="'+j+'">'+String.fromCharCode(65+j)+'. '+o+'</label>'
+   ).join("")+'</div>'+
+   '<div class="explanation" id="p'+n+'e'+i+'"></div>';
+  box.appendChild(q);
+ });
+}
+
+function submitPart(n){
+ let score=0;
+ sets[n].forEach((x,i)=>{
+  const q=document.getElementById("p"+n+"q"+i);
+  const selected=q.querySelector("input:checked");
+  const opts=q.querySelectorAll(".option");
+  opts.forEach(o=>o.classList.remove("correct","wrong"));
+  if(selected){
+   const chosen=Number(selected.value);
+   if(chosen===x.a){
+    score++;
+    selected.parentElement.classList.add("correct");
+   }else{
+    selected.parentElement.classList.add("wrong");
+    opts[x.a].classList.add("correct");
+   }
+  }else{
+   opts[x.a].classList.add("correct");
+  }
+  const e=document.getElementById("p"+n+"e"+i);
+  e.innerHTML='<h4>Why is this answer correct?</h4>'+
+    '<div>'+x.why+'</div>'+
+    '<div class="meaning"><b>Giải nghĩa tiếng Việt:</b> '+x.meaning+'</div>'+
+    '<div class="meaning"><b>Cấu trúc ngữ pháp:</b> '+x.grammar+'</div>'+
+    '<div class="answer">Correct answer: '+String.fromCharCode(65+x.a)+'. '+x.o[x.a]+'</div>';
+  e.classList.add("show");
+ });
+ document.getElementById("r"+n).textContent="Score: "+score+"/"+sets[n].length;
+}
+
+function resetPart(n){
+ renderPart(n);
+ document.getElementById("r"+n).textContent="";
+}
+
+renderPart(1);
+renderPart(2);
+renderPart(3);
+</script>
+</body>
+</html>
